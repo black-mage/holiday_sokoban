@@ -9,6 +9,8 @@ namespace NumberGame
     {
         static void Main(string[] args)
         {
+            makeTermSafe();
+
             Console.Title = "Sokoban";
             Console.CursorVisible = false;
             Console.ForegroundColor = ConsoleColor.White;
@@ -365,6 +367,16 @@ namespace NumberGame
             }
 
 
+        }
+
+        public static void makeTermSafe ()
+        {
+           // On linux, only xterm seems to work as TERM
+           String curTerm = System.Environment.GetEnvironmentVariable("TERM");
+           if (curTerm != "xterm")
+           {
+              System.Environment.SetEnvironmentVariable ("TERM", "xterm");
+           }
         }
     }
 }
