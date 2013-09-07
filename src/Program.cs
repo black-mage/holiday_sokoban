@@ -103,7 +103,7 @@ namespace NumberGame
         {
             using (StreamReader sr = new StreamReader(filename))
             {
-                string[] lines = sr.ReadToEnd().Replace("\r\n","\r").Split('\r');
+                string[] lines = sr.ReadToEnd().Replace("\r\n","\n").Split('\n');
                 
                 int xSize = lines[0].Length;
                 int ySize = lines.Length;
